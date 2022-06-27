@@ -1,0 +1,566 @@
+@media (min-width: 320px) {
+    .review {
+        margin: 20px auto 100px auto;
+
+
+        &-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 289px;
+            border: 1px solid #EEEEEE;
+            border-radius: 5px;
+
+            &__container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 90%;
+                height: 266px;
+
+                &--raiting {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .raiting-stars {
+                        width: 143px;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    .raiting-grade {
+                        font-weight: 700;
+                        font-size: 22px;
+                        line-height: 26px;
+                        color: #0A0A0A;
+                    }
+                }
+
+                .line {
+                    width: 100%;
+                    height: 0px;
+                    border: 1px solid #EEEEEE;
+                }
+
+                &--bar {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: 135px;
+
+                    .bar-item {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        &>p {
+                            font-size: 16px;
+                            line-height: 19px;
+                            color: $gray-color;
+                        }
+
+                        &__line {
+                            width: 70%;
+                            height: 10px;
+                            background: #EEEEEE;
+                            border-radius: 10px;
+
+                            .progresive {
+                                width: 146px;
+                                height: 10px;
+                                background: $main-color;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+        
+                            .progresive-second {
+                                width: 63px;
+                                height: 10px;
+                                background: $main-color;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+        
+                            .progresive-third {
+                                width: 75px;
+                                height: 10px;
+                                background: $main-color;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+        
+                            .progresive-fourth {
+                                width: 14px;
+                                height: 10px;
+                                background: $main-color;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+        
+                            .progresive-fifth {
+                                width: 0px;
+                                height: 10px;
+                                background: $main-color;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+                        }
+
+                        &>span {
+                            font-size: 16px;
+                            line-height: 19px;
+                            color: #0A0A0A;
+                        }
+                    }
+                }
+
+                &--btn {
+                    display: block;
+                    width: 100%;
+                    height: 50px;
+                    background: $main-color;
+                    border-radius: 5px;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 23px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #FFFFFF;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &-title-box {
+            .review-select {
+                width: 100%;
+                height: 40px;
+                position: relative;
+
+                &>select {
+                    margin-top: 10px;
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid #EEEEEE;
+                    border-radius: 3px;
+                    -webkit-appearance: none;
+                    outline: none;
+        
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 19px;
+                    text-indent: 15px;
+                    display: flex;
+                    align-items: center;
+                    color: $main-color;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    right: 10px;
+                    pointer-events: none;
+                    display: block;
+                    transform: translateY(-50%);
+                    border-style: solid;
+                    border-width: 3px 3.5px 0 3.5px;
+                    border-color: #c4c4cf transparent transparent transparent;
+                }
+            }
+        }
+
+        &-title {
+            margin-top: 15px;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 23px;
+            color: #0A0A0A;
+
+            &>span {
+                margin-left: 5px;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 23px;
+                color: $gray-color;
+            }
+        }
+
+        &-comments__line, &-comments__line--02 {
+            display: none;
+        }
+
+        &-images {
+            margin-top: 25px;
+            position: relative;
+
+            &__title {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                color: $gray-color;
+            }
+
+            &>button {
+                display: none;
+            }
+
+            &__items {
+                margin-top: 10px;
+                width: 100%;
+
+                .carousel-02 {
+                    .carousel-slide {                        
+                        .images {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 79.14px;
+                            height: 100px;
+                            background: #FAFAFA;
+                            border-radius: 2.6738px;
+
+                            &>img {
+                                width: 95%;
+                                border-radius: 2.6738px;
+                            }
+                        }
+
+                        @media (min-width: 1024px) {
+                            .images {
+                                width: 104.14px;
+                                height: 132px;
+                            }
+                        }
+
+                        @media (min-width: 1440px) {
+                            .images {
+                                width: 148px;
+                                height: 187px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-comments {
+            margin-top: 25px;
+
+            &__user {
+                display: flex;
+                flex-direction: column;
+
+                .user {
+                    border-bottom: 1px solid #EEEEEE;
+
+                    &-name {
+                        display: flex;
+                        flex-direction: row;
+
+                        &__img {
+                            width: 50px;
+    
+                            &>img {
+                                width: 100%;
+                            }
+                        }
+
+                        &__title {
+                            margin-left: 10px;
+                            display: flex;
+                            align-items: baseline;
+                            width: 202px;
+                            flex-wrap: wrap;
+
+                            &--name {
+                                width: 100%;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 21px;
+                                color: #0A0A0A;
+                            }
+
+                            &--stars {
+                                width: 87px;
+                                height: 14px;
+                                display: flex;
+                                justify-content: space-between;
+
+                                &>img {
+                                    width: 13px;
+                                    height: 12px;
+                                }
+                            }
+
+                            &--date {
+                                margin-left: 10px;
+                                font-size: 14px;
+                                line-height: 16px;
+                                color: $gray-color;
+                            }
+                        }
+                        &__text {
+                            margin-top: 15px;
+
+                            &--advantages {
+                                font-size: 16px;
+                                line-height: 20px;
+                                color: #404040;
+
+                                &>span {
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                    color: #0A0A0A;
+                                    color: $gray-color;
+                                }
+                            }
+
+                            &--disadvantages {
+                                margin-top: 10px;
+                                font-size: 16px;
+                                line-height: 20px;
+                                color: #404040;
+
+                                &>span {
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                    color: $gray-color;
+                                }
+                            }
+
+                            &--title {
+                                margin-top: 10px;
+                                font-size: 16px;
+                                line-height: 20px;
+                                color: #404040;
+                            }
+                        }
+
+                        &__images {
+                            margin: 15px 0px 15px 0px;
+                            display: flex;
+                            width: 290px;
+                            justify-content: space-between;
+
+                            &--item {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 50px;
+                                height: 64.71px;
+                                border: 2px solid #EEEEEE;
+                                border-radius: 5px;
+
+                                &>img {
+                                    width: 97%;
+                                    border-radius: 5px;
+                                }
+                            }
+
+                            &--item:last-child {
+                                display: none;
+                            }
+                        }
+
+                        &__reactions {
+                            margin: 15px 0px 25px 0px;
+                            width: 103px;
+                            display: flex;
+                            justify-content: space-between;
+
+                            &--like, &--dislike {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-evenly;
+                                width: 50px;
+                                height: 29px;
+                                background: #FAFAFA;
+                                border-radius: 5px;
+                                border: none;
+
+                                &>span {
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    color: $gray-color;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .user:last-child {
+                    margin-top: 25px;
+                    border-bottom: none;
+
+                    .user-name__images {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .review {
+        margin: 75px auto 50px auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+
+        &-box {
+            width: 298px;
+            height: 307px;
+        }
+
+        &-comments__block {
+            display: block;
+            width: 550px;
+        }
+
+        &-comments {
+            &__user {
+                .user:last-child {
+                    &>hr {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &-comments__line {
+            display: block;
+            margin-top: 10px;
+            width: 100%;
+            height: 0;
+            border: 1px solid #EEEEEE;
+            transform: rotate(0.05deg);
+        }
+
+        &-comments__line--02 {
+            display: block;
+            margin-top: 25px;
+            width: 100%;
+            height: 0;
+            border: 1px solid #EEEEEE;
+            transform: rotate(0.05deg);
+        }
+
+        &-title-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .review-select {
+                width: 200px;
+                height: 40px;
+
+                &>select {
+                    margin-top: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid #EEEEEE;
+                    border-radius: 3px;
+                    -webkit-appearance: none;
+    
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 19px;
+                    text-indent: 15px;
+                    display: flex;
+                    align-items: center;
+                    color: $main-color;
+                    outline: none;
+                }
+            }
+
+            @media (min-width: 1440px) {
+                .review-select {
+                    width: 240px;
+                }
+            }
+        }
+
+        &-title {
+            font-size: 28px;
+
+            &>span {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .review {
+        .review-comments__block {
+            width: 850px;
+        }
+
+        &-comments {
+            &__user {
+                .user {
+                    &-name__img {
+                        width: 65px;
+                    }
+
+                    &-name__title {
+                        margin-top: 4.5px;
+                        width: 256px;
+                        align-items: unset;
+
+                        &--name {
+                            font-size: 24px;
+                            line-height: 28px;
+                        }
+
+                        &--stars {
+                            width: 112px;
+
+                            &>img {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+
+                        &--date {
+                            font-size: 18px;
+                            line-height: 21px;
+                        }
+                    }
+
+                    &-name__text {
+                        margin-left: 80px;
+                        width: 704px;
+
+                        &--advantages, &--disadvantages, &--title {
+                            font-size: 18px;
+                            line-height: 22px;
+
+                            &>span {
+                                font-size: 18px;
+                                line-height: 22px;
+                            }
+                        }
+                    }
+
+                    &-name__images {
+                        margin-left: 80px;
+                        width: 361px;
+
+                        &--item:last-child {
+                            display: flex;
+                            width: 52px;
+                        }
+                    }
+
+                    &-name__reactions {
+                        margin-left: 80px;
+                    }
+                }
+            }
+        }
+    }
+}

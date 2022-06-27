@@ -1,0 +1,59 @@
+@import './blocks/header';
+@import './blocks/subheader';
+@import './blocks/promo';
+@import './blocks/description';
+@import './blocks/carousel';
+@import './blocks/carouselitem';
+@import './blocks/review';
+@import './blocks/footer';
+@import './base';
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+* {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+h3 {
+    font-weight: 300;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (min-width: 320px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 49px;
+        padding-right: 49px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 1302px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
