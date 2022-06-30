@@ -40,13 +40,13 @@
         </div>
 
         <div class="user-name__reactions">
-            <button v-on:click="like += 1" class="user-name__reactions--like">
+            <button @click="likeReaction" class="user-name__reactions--like">
                 <img src="@/assets/icons/like-btn.svg">
-                <span id="count-reaction">{{ like }}</span>
+                <span id="count-reaction">{{ user.like }}</span>
             </button>
-            <button class="user-name__reactions--dislike">
+            <button @click="dislikeReaction" class="user-name__reactions--dislike">
                 <img src="@/assets/icons/dislike-btn.svg">
-                <span id="count-reaction">{{ dislike }}</span>
+                <span id="count-reaction">{{ user.dislike }}</span>
             </button>
         </div>
     </div>
@@ -56,8 +56,7 @@
 export default {
     data() {
         return {
-            like: 4,
-            dislike: 2,
+            clicked: false,
             users: [
                 {
                     id: 1,
@@ -95,6 +94,8 @@ export default {
                             item: require("../assets/column_img/image44.png")
                         }
                     ],
+                    like: 2,
+                    dislike: 0
                 },
                 {
                     id: 2,
@@ -102,9 +103,35 @@ export default {
                     img: "account2.png",
                     date: "23 Junuary 2021",
                     text: "I checked the goods according to the dimensional grid and everything fit, the delivery did not take much time, I am happy with everything, I will order from this seller.",
-                    slide: false
+                    advantagesName: "Advantages:",
+                    advantages: "",
+                    disadvantagesName: "",
+                    disadvantages: " ",
+                    slide: false,
+                    like: 0,
+                    dislike: 0
                 }
             ]
+        }
+    },
+    methods: {
+        likeReaction () {
+            if (!this.clicked) {
+                this.clicked = true
+                this.users[0].like++
+            } else {
+                this.clicked = false
+                this.users[0].like--
+            }
+        },
+        dislikeReaction () {
+            if (!this.clicked) {
+                this.clicked = true
+                this.users[0].dislike++
+            } else {
+                this.clicked = false
+                this.users[0].dislike--
+            }
         }
     }
 }

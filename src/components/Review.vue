@@ -151,8 +151,6 @@
                                 <UploadImages :max="3" @change="handleImages"/>
                             </div>
                             <a href="#" class="modal-btn">Send a review</a>
-
-                            
                         </form>
                     </div>
                 </div>

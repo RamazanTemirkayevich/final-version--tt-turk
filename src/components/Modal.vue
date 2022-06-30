@@ -228,7 +228,7 @@
 
                         @media (min-width: 1024px) {
                             .modal-btn {
-                                width: 193px;
+                                width: 230px;
                                 font-size: 14px;
                                 height: 50px;
                             }
@@ -246,7 +246,7 @@
 
             @media (min-width: 1024px) {
                 &-box {
-                    width: 540px;
+                    width: 561px;
                     height: 696px;
                     padding: 30px;
                 }
