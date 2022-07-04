@@ -89,16 +89,14 @@
                     </div>
                     <div class="promo-size">
                         <p class="promo-size__name">
-                            Size: <span></span>
+                            Size: <span class="size-container">{{ message }}</span>
                         </p>
+
                         <div class="promo-size__items">
-                            <div class="promo-size__items--index">xs</div>
-                            <div class="promo-size__items--index">s</div>
-                            <div class="promo-size__items--index">m</div>
-                            <div class="promo-size__items--index">l</div>
-                            <div class="promo-size__items--index">xl</div>
-                            <div class="promo-size__items--index">xxl</div>
-                            <div class="promo-size__items--index">xxxl</div>
+                            <div class="promo-size__items--index"
+                                v-for="size of sizes" 
+                                :key="size.id">{{ size.value }}
+                            </div>
                         </div>
                     </div>
                     <div class="promo-counter">
@@ -258,7 +256,42 @@ export default {
                     id: 1,
                     item: "Blue"
                 }
+            ],
+            sizes: [
+                {
+                    id: 1,
+                    value: 'xs'
+                },
+                {
+                    id: 2,
+                    value: 's'
+                },
+                {
+                    id: 3,
+                    value: 'm'
+                },
+                {
+                    id: 4,
+                    value: 'l'
+                },
+                {
+                    id: 5,
+                    value: 'xl'
+                },
+                {
+                    id: 6,
+                    value: 'xxl'
+                },
+                {
+                    id: 7,
+                    value: 'xxxl'
+                }
             ]
+        }
+    },
+    methods: {
+        ShowSize(item) {
+            item.appendChild('size-container');
         }
     }
 }

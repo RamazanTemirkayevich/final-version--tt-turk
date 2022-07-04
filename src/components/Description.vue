@@ -14,28 +14,6 @@
                 </p>
             </div> -->
 
-            <VueSlickCarousel 
-                ref="c1"
-                :asNavFor="$refs.c2"
-                :focusOnSelect="true"
-            >
-                <div><h3>1</h3></div>
-                <div><h3>2</h3></div>
-                <div><h3>3</h3></div>
-                <div><h3>4</h3></div>
-            </VueSlickCarousel>
-
-            <!-- <VueSlickCarousel
-                ref="c2"
-                :asNavFor="$refs.c1"
-                :slidesToShow="4"
-                :focusOnSelect="true"
-            >
-                <div><h3>1</h3></div>
-                <div><h3>2</h3></div>
-                <div><h3>3</h3></div>
-                <div><h3>4</h3></div>
-            </VueSlickCarousel> -->
 
             <p @click="toggleDescription" class="description-show">{{ descriptionOpen ? 'Hide Description' : 'Expand Description' }}</p>
 
@@ -107,16 +85,9 @@
 <script>
 import Characteristics from './Characterisctics.vue'
 
-import VueSlickCarousel from 'vue-slick-carousel'
-// optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
 export default {
-    name: 'Description',
     components: {
-        Characteristics,
-        VueSlickCarousel
+        Characteristics
     },
     data() {
         return {
