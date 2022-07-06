@@ -422,6 +422,10 @@ $main-font: 'Roboto';
                         line-height: 14px;
                         color: #0A0A0A;
                     }
+
+                    &>a:hover, img>svg:hover {
+                        color: $main-color;
+                    }
                 }
 
                 &--item:last-child {

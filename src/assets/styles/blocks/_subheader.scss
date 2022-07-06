@@ -115,10 +115,16 @@ $main-font: 'Roboto';
                         width: 15px;
                     }
 
-                    &>span {
+                    .deffered-btn {
                         font-size: 14px;
                         line-height: 16px;
                         color: $main-color;                        
+                    }
+
+                    .deffered-btn__add {
+                        font-size: 14px;
+                        line-height: 16px;
+                        color: #00B33C;                        
                     }
                 }
 

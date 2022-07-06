@@ -48,7 +48,12 @@
                     </div>
                     <a href="#" class="subheader-name__function--add">
                         <img src="@/assets/icons/add.svg">
-                        <span>Add to deferred</span>
+                        <a 
+                            @click="addTo()"
+                            v-bind:class="[Deffered ? 'deffered-btn' : 'deffered-btn__add']"
+                        >
+                            {{ Deffered ? 'Add to deffered' : 'Item added' }}
+                        </a>
                     </a>
                     <p class="subheader-name__function--code">Product code: 123821</p>
                 </div>
@@ -58,3 +63,18 @@
         </section>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            Deffered: true
+        }
+    },
+    methods: {
+        addTo() {
+            this.Deffered = !this.Deffered
+        }
+    }
+}
+</script>

@@ -12,7 +12,9 @@
     "node-sass": "^4.14.1",
     "swiper": "^6.5.0",
     "vue": "^3.2.37",
+    "vue-basic-alert": "^1.1.0",
     "vue-images": "^1.1.0",
+    "vue-slide-tab": "^2.0.0",
     "vue-upload-drop-images": "^1.0.7",
     "vue3-carousel": "^0.1.40"
   },

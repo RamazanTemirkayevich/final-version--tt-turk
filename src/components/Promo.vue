@@ -88,8 +88,8 @@
                         </div>
                     </div>
                     <div class="promo-size">
-                        <p class="promo-size__name">
-                            Size: <span class="size-container">{{ message }}</span>
+                        <!-- <p class="promo-size__name">
+                            Size: <span>{{}}</span>
                         </p>
 
                         <div class="promo-size__items">
@@ -97,7 +97,7 @@
                                 v-for="size of sizes" 
                                 :key="size.id">{{ size.value }}
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="promo-counter">
                         <p class="promo-counter__title">Amount: <span>{{ count }}</span></p>
@@ -125,7 +125,7 @@
                             </p>
                         </div>
                     </div>
-                    <a href="#" class="promo-detail">View detailed characteristics</a>
+                    <a href="#characteristics" class="promo-detail">View detailed characteristics</a>
                 </div>
 
                 <div class="promo-blocks">
@@ -139,12 +139,36 @@
                                 <p class="promo-price-desktop__wholesale--text">Wholesale price</p>
                                 <span class="price">12,50 $</span>
                             </div>
-                            <a href="#" class="promo-price-desktop__buy">
-                                Add to Shopping Cart
+                            <a href="#" class="promo-price-desktop__buy"
+                                v-bind:class="[isActive ? 'promo-price-desktop__buy' : 'promo-price-desktop__buy--add']"
+                                @click="$refs.alert
+                                    .showAlert(
+                                        'success',
+                                        'Item added to cart',
+                                        'Done',
+                                        'Success 200',
+                                        'This is the information of something you may know Success.'
+                                    ), 
+                                    toggleClass()
+                                    "
+                            >
+                                {{ isActive ? 'Add to Shopping Cart' : 'Remove from Cart'}}
                             </a>
                             <a class="promo-price-desktop__btn">
                                 Buy now
                             </a>
+
+                            <vue-basic-alert 
+                                :duration="300"
+                                :closeIn="3500"
+                                ref="alert" 
+                            />
+
+                            <vue-basic-alert 
+                                :duration="300"
+                                :closeIn="3500"
+                                ref="alert02" 
+                            />
                         </div>
                     </div>
 
@@ -217,6 +241,9 @@
 <script>
 import SwiperCore, { Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import VueBasicAlert from 'vue-basic-alert'
+//import Tabs from './Tabs.vue'
+//import Tab from './Tab.vue'
 
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -228,9 +255,13 @@ export default {
     components: {
         Swiper,
         SwiperSlide,
+        VueBasicAlert,
+        //Tabs,
+        //Tab
     },
     data() {
         return {
+            currentSize: 'x',
             count: 1,
             activetab: 1,
             images: [
@@ -286,12 +317,18 @@ export default {
                     id: 7,
                     value: 'xxxl'
                 }
-            ]
+            ],
+            isActive: true,
+            cur: 7
         }
     },
     methods: {
-        ShowSize(item) {
-            item.appendChild('size-container');
+        toggleClass: function(){
+            this.isActive = !this.isActive;
+            
+        },
+        tabClick(index) {
+          this.cur = index
         }
     }
 }

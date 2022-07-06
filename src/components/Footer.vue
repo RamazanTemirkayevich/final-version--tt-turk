@@ -1,7 +1,26 @@
 <template>
     <div class="footer">
         <div class="footer-btn">
-            <a href="#" class="footer-btn__item">Add to Shopping Cart</a>
+            <a href="#" class="footer-btn__item"
+                v-bind:class="[Active ? 'footer-btn__item' : 'footer-btn__item--add']"
+                @click="$refs.alert02
+                    .showAlert(
+                        'success',
+                        'Item added to cart',
+                        'Done',
+                        'Success 200',
+                        'This is the information of something you may know Success.'
+                    ),
+                    toggleBtn()
+                    "
+            >
+                {{ Active ? 'Add to Shopping Cart' : 'Remove from Cart'}}
+            </a>
+            <vue-basic-alert 
+                :duration="300"
+                :closeIn="3500"
+                ref="alert02" 
+            />
         </div>
         <div class="footer-list">
             <ul class="footer-list__items">
@@ -39,3 +58,24 @@
         </div>
     </div>
 </template>
+
+<script>
+import VueBasicAlert from 'vue-basic-alert'
+
+export default {
+    components: {
+        VueBasicAlert
+    },
+    data() {
+        return {
+            Active: true
+        }
+    },
+    methods: {
+        toggleBtn: function(){
+            this.Active = !this.Active;
+            
+        }
+    }
+}
+</script>

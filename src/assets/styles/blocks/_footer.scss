@@ -28,6 +28,20 @@
                 font-size: 18px;
                 line-height: 21px;
             }
+
+            &__item--add {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 90%;
+                height: 40px;
+                background: #00B33C;
+                border-radius: 5px;
+                color: #FFFFFF;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 21px;
+            }
         }
 
         &-list {
