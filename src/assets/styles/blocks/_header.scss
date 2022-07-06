@@ -440,7 +440,13 @@ $main-font: 'Roboto';
     .header {
         .container {
             position: relative;
-            width: 1280px;
+            width: 90%;
+        }
+
+        @media (min-width: 1440px) {
+            .container {
+                width: 1280px;
+            }
         }
 
         &-nav {

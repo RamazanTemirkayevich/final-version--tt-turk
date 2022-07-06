@@ -6,7 +6,7 @@
                     type: 'fraction'
                 }"          
                 :modules="modules"                
-                class="mySwipe"
+                class="swipe"
             >
                 <swiper-slide class="swiper-slide" v-for="items in images" :key="items.id">
                     <img :src="items.item">
@@ -88,6 +88,35 @@
                         </div>
                     </div>
                     <div class="promo-size">
+                            <Tab :isSelected="selected === 'xs'" >
+                                Size:
+                                <span style="color: black; margin-left: 5px;">XS</span>
+                            </Tab>
+                            <Tab :isSelected="selected === 's'" >
+                                Size:
+                                <span style="color: black; margin-left: 5px;">S</span>
+                            </Tab>
+                            <Tab :isSelected="selected === 'm'" >
+                                Size:
+                                <span style="color: black; margin-left: 5px;">M</span>
+                            </Tab>
+                             <Tab :isSelected="selected === 'l'" >
+                                Size:
+                                <span style="color: black; margin-left: 5px;">L</span>
+                            </Tab>
+                             <Tab :isSelected="selected === 'xl'" >
+                                Size:
+                                <span style="color: black; margin-left: 5px;">XL</span>
+                            </Tab>
+                             <Tab :isSelected="selected === 'xxl'" >
+                                Size:
+                                <span style="color: black; margin-left: 5px;">XXL</span>
+                            </Tab>
+                             <Tab :isSelected="selected === 'xxxl'" >
+                                Size:
+                                <span style="color: black; margin-left: 5px;">XXXL</span>
+                            </Tab>
+                        <TabNav :tabs="['xs', 's', 'm', 'l', 'xs', 'xxl', 'xxxl']" :selected="selected" @selected="setSelected" />
                         <!-- <p class="promo-size__name">
                             Size: <span>{{}}</span>
                         </p>
@@ -103,7 +132,7 @@
                         <p class="promo-counter__title">Amount: <span>{{ count }}</span></p>
                         <div class="promo-counter__elements">
                             <div class="counter">
-                                <button @click="if (count > 1) count--;" class="minus">-</button>
+                                <button @click="if (count > 0) count--;" class="minus">-</button>
                                 <span>{{ count }}</span>
                                 <button @click="count++" class="plus">+</button>
                             </div>
@@ -242,8 +271,8 @@
 import SwiperCore, { Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import VueBasicAlert from 'vue-basic-alert'
-//import Tabs from './Tabs.vue'
-//import Tab from './Tab.vue'
+import TabNav from './TabNav.vue'
+import Tab from './Tab.vue'
 
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -256,14 +285,15 @@ export default {
         Swiper,
         SwiperSlide,
         VueBasicAlert,
-        //Tabs,
-        //Tab
+        TabNav,
+        Tab
     },
     data() {
         return {
             currentSize: 'x',
-            count: 1,
+            count: 0,
             activetab: 1,
+            selected: 'Home',
             images: [
                 {   
                     id: 1,
@@ -327,8 +357,8 @@ export default {
             this.isActive = !this.isActive;
             
         },
-        tabClick(index) {
-          this.cur = index
+        setSelected(tab) {
+            this.selected = tab;
         }
     }
 }

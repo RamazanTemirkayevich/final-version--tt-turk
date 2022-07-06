@@ -78,12 +78,20 @@ export default {
                     itemsToShow: 2.1,
                     snapAlign: 'start',
                 },
-                700: {
+                420: {
+                    itemsToShow: 3.1,
+                    snapAlign: 'start',
+                },
+                500: {
                     itemsToShow: 4.5,
                     snapAlign: 'start',
                 },
+                700: {
+                    itemsToShow: 5.5,
+                    snapAlign: 'start',
+                },
                 1024: {
-                    itemsToShow: 5,
+                    itemsToShow: 6,
                     snapAlign: 'start',
                 },
                 1440: {
@@ -191,9 +199,21 @@ export default {
 <style lang="scss">
 @media (min-width: 320px) {
     .carousel-01 {
+        text-align: start !important;
+        
         .carousel__prev, .carousel__next {
             display: none;
         }
+
+        .carousel__slide {
+            padding-left: 5px;
+        }
+
+        .carousel__track {
+            align-items: baseline !important;
+        }
+
+        .carousel__slide:first-child {padding: 0;}
     }
 }
 
@@ -233,7 +253,11 @@ export default {
         .carousel__prev--in-active,
         .carousel__next--in-active {
             display: none;
-        }   
+        }
+
+        .carousel__slide {
+            padding-left: 15px;
+        }
     }
 }
 </style>
